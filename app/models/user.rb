@@ -10,12 +10,6 @@ class User < ActiveRecord::Base
   validates_length_of :username, :maximum => 16, :message => 'can only be 16 characters long'
   validates_length_of :username, :minimum => 4, :message => 'has to be atleast 4 characters long'
 
-
-  # has_many :user_connections_as_follower, :class_name => 'UserConnection', :foreign_key => :follower_id
-  # has_many :user_connections_as_followee, :class_name => 'UserConnection', :foreign_key => :followee_id
-  # has_many :followers, :through => :user_connections_as_followee, :source => :follower, :conditions => ['accepted_at IS NOT NULL']
-  # has_many :following, :through => :user_connections_as_follower, :source => :followee, :conditions => ['accepted_at IS NOT NULL']
-
   before_save :downcase_email
   before_create :create_remember_token
 
