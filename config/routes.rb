@@ -1,4 +1,4 @@
-RailsSkeleton::Application.routes.draw do
+MealPlanner::Application.routes.draw do
   root to: 'home#index'
 
   resource :users

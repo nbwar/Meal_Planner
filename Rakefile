@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RailsSkeleton::Application.load_tasks
+MealPlanner::Application.load_tasks
