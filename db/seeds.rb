@@ -6,14 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Type.create(category: 'main')
-Type.create(category: 'side')
-Type.create(category: 'snack')
+Type.create(category: 'main', breakfast: true)
+Type.create(category: 'main', breakfast: false)
+Type.create(category: 'side', breakfast: true)
+Type.create(category: 'side', breakfast: false)
+Type.create(category: 'snack', breakfast: true)
+Type.create(category: 'snack', breakfast: false)
+Type.create(category: 'shake', breakfast: true)
+Type.create(category: 'shake', breakfast: false)
 
 
 
-pizza = Food.create(name: 'pizza', is_vegitarian: false, is_glutan_free: false, calories: 410, protein: 32, carbs: 65, fat: 20, cook_time: 15, prep_time: 15, servings: 2, type_id: 1)
-salad = Food.create(name: 'salad', is_vegitarian: true, is_glutan_free: false, calories: 200, protein: 10, carbs: 15, fat: 10, cook_time: 0, prep_time: 10)
+
+pizza = Food.create(name: 'pizza', is_vegitarian: false, is_glutan_free: false, calories: 410, protein: 32, carbs: 65, fat: 20, cook_time: 15, prep_time: 15, servings: 2, type_id: 2)
+salad = Food.create(name: 'salad', is_vegitarian: true, is_glutan_free: false, calories: 200, protein: 10, carbs: 15, fat: 10, cook_time: 0, prep_time: 10, type_id: 4)
 
 
 
