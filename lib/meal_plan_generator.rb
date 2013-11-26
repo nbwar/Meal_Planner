@@ -29,12 +29,9 @@ module MealPlanGenerator
           end
         end
 
-        meal.calories = meal.foods.map(&:calories).reduce(:+)
-        meal.carbs = meal.foods.map(&:carbs).reduce(:+)
-        meal.fat = meal.foods.map(&:fat).reduce(:+)
-        meal.protein = meal.foods.map(&:protein).reduce(:+)
-        meal.cook_time = meal.foods.map(&:cook_time).reduce(:+)
-        meal.prep_time = meal.foods.map(&:prep_time).reduce(:+)
+        [:calories, :carbs, :fat, :protein, :cook_time, :prep_time].each do |sym|
+          meal.send("#{sym}=", meal.foods.map(&sym).reduce(:+))
+        end
       end
 
       meal
