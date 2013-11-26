@@ -8,6 +8,6 @@ class Food < ActiveRecord::Base
   accepts_nested_attributes_for :amounts, :ingredients
 
   def self.find_dish cals, category, breakfast
-    joins(:type).where("foods.calories < ? AND types.category = ? AND types.breakfast = ?", cals, category, breakfast)
+    joins(:type).where("foods.calories < ? AND types.category = ? AND types.breakfast = ?", cals, category, breakfast).sample
   end
 end

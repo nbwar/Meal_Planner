@@ -53,6 +53,13 @@ ActiveRecord::Schema.define(version: 20131123233906) do
     t.datetime "updated_at"
   end
 
+  create_table "foods_meals", force: true do |t|
+    t.integer "meal_id"
+    t.integer "food_id"
+  end
+
+  add_index "foods_meals", ["meal_id", "food_id"], name: "index_foods_meals_on_meal_id_and_food_id", using: :btree
+
   create_table "ingredients", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -73,13 +80,6 @@ ActiveRecord::Schema.define(version: 20131123233906) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "meals_foods", force: true do |t|
-    t.integer "meal_id"
-    t.integer "food_id"
-  end
-
-  add_index "meals_foods", ["meal_id", "food_id"], name: "index_meals_foods_on_meal_id_and_food_id", using: :btree
 
   create_table "meals_plans", id: false, force: true do |t|
     t.integer "meal_id"
