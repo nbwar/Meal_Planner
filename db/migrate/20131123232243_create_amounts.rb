@@ -3,7 +3,7 @@ class CreateAmounts < ActiveRecord::Migration
     create_table :amounts do |t|
       t.belongs_to :food
       t.belongs_to :ingredient
-      t.decimal :quantity
+      t.string :quantity
       t.string :measurement
       t.timestamps
 
