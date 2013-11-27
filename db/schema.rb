@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20131123233906) do
   create_table "amounts", force: true do |t|
     t.integer  "food_id"
     t.integer  "ingredient_id"
-    t.decimal  "quantity"
+    t.string   "quantity"
     t.string   "measurement"
     t.datetime "created_at"
     t.datetime "updated_at"
